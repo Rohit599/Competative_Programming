@@ -1,0 +1,72 @@
+// Tranform the Expression
+// https://www.codechef.com/problems/ONP
+
+/* package codechef; // don't place package name! */
+ 
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+ 
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+    static int top=-1;
+    static char c[]=new char[400];
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		for(int i=1;i<=t;i++)
+		{
+		    String s=sc.next();
+		    s="("+s+")";
+		    int size=s.length();
+		    String s1="";
+		    for(int j=0;j<size;j++)
+		    {
+		        char ch=s.charAt(j);
+		        if(Character.isLetterOrDigit(ch))
+		        s1=s1+ch;
+		        if(ch=='(')
+		        push(ch);
+		        if(precedence(ch)>0)
+		        {
+		            while(precedence(c[top])>=precedence(ch))
+		            {
+		                s1=s1+pop();
+		            }
+		            push(ch);
+		        }
+		        if(ch==')')
+		        {
+		            while(c[top]!='(')
+		            {
+		                s1=s1+pop();
+		            }
+		           char tmp= pop();
+		        }
+		    }
+		    System.out.println(s1);
+		    
+		}
+	}
+	public static int precedence(char c)
+    {   switch(c)
+        {   case '^': return 3;
+            case '/':
+            case '*': return 2;
+            case '+':
+            case '-': return 1;
+            default:  return 0;
+        }
+    }
+    
+    static void push(char ch)
+    {   c[++top]=ch;
+    }
+    static char pop()
+    {   return c[top--];
+    }
+   
+}
+ 

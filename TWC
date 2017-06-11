@@ -1,0 +1,37 @@
+// Three Way Communications
+// https://www.codechef.com/problems/COMM3
+
+/* package codechef; // don't place package name! */
+ 
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+ 
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);
+		int T=sc.nextInt();
+		for(int i=1;i<=T;i++)
+		{
+		    int R=sc.nextInt();
+		    int X1=sc.nextInt();
+		    int Y1=sc.nextInt();
+		    int X2=sc.nextInt();
+		    int Y2=sc.nextInt();
+		    int X3=sc.nextInt();
+		    int Y3=sc.nextInt();
+		    double d1=Math.sqrt(Math.pow(X2-X1,2)+Math.pow(Y2-Y1,2));
+		    double d2=Math.sqrt(Math.pow(X3-X2,2)+Math.pow(Y3-Y2,2));
+		    double d3=Math.sqrt(Math.pow(X3-X1,2)+Math.pow(Y3-Y1,2));
+		    if((d1<=R&&d2<=R)||(d1<=R&&d3<=R)||(d2<=R&&d3<=R))
+		    System.out.println("yes");
+		    else
+		    System.out.println("no");
+		}
+	}
+}
+
+

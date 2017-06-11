@@ -1,0 +1,62 @@
+// Smallest Number of Notes
+// https://www.codechef.com/problems/FLOW005
+
+    /* package codechef; // don't place package name! */
+     
+    import java.util.*;
+    import java.lang.*;
+    import java.io.*;
+     
+    /* Name of the class has to be "Main" only if the class is public. */
+    class Codechef
+    {
+    	public static void main (String[] args) throws java.lang.Exception
+    	{
+    	 Scanner sc=new Scanner(System.in);
+    	 int T=sc.nextInt();
+    	 for(int i=1;i<=T;i++)
+    	 {
+    	     int N=sc.nextInt();
+    	     int c=N/100;
+    	     N=N%100;
+    	     if(N==0)
+    	     System.out.println(c);
+    	     else
+    	     {
+    	      c+=N/50;
+    	      N=N%50;
+    	     if(N==0)
+    	     System.out.println(c);
+    	     else
+    	     {
+    	     c+=N/10;
+    	     N=N%10;
+    	     if(N==0)
+    	     System.out.println(c);
+    	     else
+    	     {
+    	      c+=N/5;
+    	      N=N%5;
+    	      if(N==0)
+    	      System.out.println(c);
+    	      else
+    	      { 
+    	       c+=N/2;
+    	       N=N%2;
+    	       if(N==0)
+    	       System.out.println(c);
+    	      else
+    	      {
+    	      c+=N;
+    	      System.out.println(c);
+    	      }
+    	      }
+    	     }
+    	     }
+    	     }
+    	      
+    	         
+    	     }
+    	}
+    }
+     
